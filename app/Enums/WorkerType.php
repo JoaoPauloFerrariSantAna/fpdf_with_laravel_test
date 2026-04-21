@@ -6,5 +6,5 @@ enum WorkerType: string
 {
     case HUMAN_RESOURSE = "HR";
     case RESEARCH_DEVELOPMENT = "RD";
-    case TELEMARKENTING = "COMMUNICATION";
+    case TELEMARKENTING = "TM";
 }
