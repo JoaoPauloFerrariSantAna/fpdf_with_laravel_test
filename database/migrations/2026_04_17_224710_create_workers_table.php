@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('workers_tbl', function (Blueprint $table) {
             $table->id();
-			$table->string("name", 16);
-			$table->string("email", 16);
+			$table->string("name", 32);
+			$table->string("email", 32);
 			$table->enum("sector", array_column(WorkerType::cases(), "value"));
             $table->unsignedBigInteger("enterprise_id");
 			$table->foreign("enterprise_id")->references("id")->on("enterprise_tbl");

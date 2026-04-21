@@ -13,7 +13,6 @@ return new class extends Migration
 			$table->string("name", 16);
 			$table->integer("worker_amount");
             $table->timestamps();
-			$table->softDeletes();
         });
     }
 
