@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Enterprise;
+use App\Enums\WorkerType;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Worker>
@@ -14,12 +16,13 @@ class WorkerFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $fillable = array("name", "email", "sector", "enterprise_id");
-
     public function definition(): array
     {
         return [
-            //
+			"name" => $this->faker->name,
+			"email" => $this->faker->email(),
+			"sector" => $this->faker->randomElement(array_column(WorkerType::cases(), "value")),
+			"enterprise_id" => $this->faker->randomNumber(1, Enterprise::max("id")),
         ];
     }
 }
