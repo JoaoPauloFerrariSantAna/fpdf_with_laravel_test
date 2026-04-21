@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Workers extends Model
+class Worker extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
+	use HasFactory;
 
 	protected $table = "workers_tbl";
-    protected $fillable = array("name", "email", "sector", "enterprise_id");
+	protected $fillable = array("name", "email", "sector", "enterprise_id");
 }
