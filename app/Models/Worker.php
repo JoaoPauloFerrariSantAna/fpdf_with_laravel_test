@@ -13,4 +13,14 @@ class Worker extends Model
 
 	protected $table = "workers_tbl";
 	protected $fillable = array("name", "email", "sector", "enterprise_id");
+
+	public function enterprise(): HasOne
+	{
+		return $this->hasOne(Enterprise::class);
+	}
+
+	public function sale(): BelongsTo
+	{
+		return $this->belongsTo(Sale::class);
+	}
 }
