@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('enterprise_tbl', function (Blueprint $table) {
             $table->id();
+			$table->unsignedBigInteger("worker_id");
 			$table->string("name", 16);
 			$table->integer("worker_amount");
             $table->timestamps();
